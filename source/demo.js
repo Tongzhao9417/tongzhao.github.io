@@ -53,7 +53,7 @@ $(function () {
     }
 
     function showComment() {
-        var text = sessionStorage.getItem('comment-content');
+        var text = sessionStorage.getItem('评论内容');
         $('.new-guest-name').text(i);
         $('.new-guest-comment').text(text);
         $('.new-comment').css('display', 'flex');
@@ -61,7 +61,7 @@ $(function () {
         $('#comment-num').text('4');
         $('.reply-btn').css('display', 'none');
     }
-    var commentContent = sessionStorage.getItem('comment-content');
+    var commentContent = sessionStorage.getItem('评论内容');
     // console.log(getData());
     if (commentContent != null) {
         showComment();
