@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>来日可期的微博</title>
+    <style type="text/css" class="ini">
+        div {
+            display: none;
+        }
+    </style>
+    <script src='./source/jquery-3.5.1.min.js'></script>
+    <link rel="stylesheet" href="./source/jquery-ui/jquery-ui.min.css">
+    <script src="./source/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./source/demo.js"></script>
+    <!-- <link rel="stylesheet" href="./source/bootstrap-4.5.3-dist/css/bootstrap.min.css"> -->
+    <!-- <script src="./source/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="./source/reset.css">
+    <link rel="stylesheet" href="./source/weibofont/weibo.css">
+    <link rel="stylesheet" href="./source/text.css">
+    <script type="text/javascript">
+
+    </script>
+
+
+
+
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-wrap">
+            <div class="back">
+                <i class="m-font m-font-arrow-left"></i>
+            </div>
+            <h4 class="title">微博正文</h4>
+            <div class="more">
+                <i class="m-font m-font-dot-more"></i>
+            </div>
+        </div>
+    </div>
+    <div class="time-title">
+        <div class="h1">倒计时</div>
+    </div>
+    <div class="time-item">
+        <strong id="minute_show">0分</strong>
+        <strong id="second_show">0秒</strong>
+    </div>
+    <div class="finish-box">
+        <button id="finishing">点击结束实验!</button>
+    </div>
+    <div class="card">
+        <div class="main-card">
+            <div class="wb-content-frame">
+                <div class="card-warp">
+                    <div class="weibo-top-box">
+                        <div class="m-avatar-box">
+                            <img class="bgImg" src="./source/m-avatar.jpg" alt="">
+                        </div>
+                        <div class="m-box-name-box">
+                            <h3 class="host-name">来日可期</h3>
+                            <h4 class="host-phone">3小时前 来自 iPhone客户端</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="content-frame">
+                    <div class="host-content">误会如果能开口说清楚，就不叫误会了</div>
+                    <div class="like-to-host">
+                        <i class="lite-iconf lite-iconf-like" id="like"></i>
+                        <em class="liked-num">0</em>
+                        <em></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="lite-page-tab">
+            <div class="lite-page-tab-wrap">
+                <div class="forward-num">
+                    转发
+                    <em id="forward-num">0</em>
+                </div>
+                <div class="comment-num">
+                    评论
+                    <em id="comment-num">3</em>
+                </div>
+                <div class="like-num">
+                    赞
+                    <em id="like-num">0</em>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-area">
+
+            <div class="comment-frame">
+                <div class="comment">
+                    <div class="comment-wrap">
+                        <div class="guest-img">
+                            <img class="bgImg" src="./source/1.jpg" alt="">
+                        </div>
+                        <div class="guest-box">
+                            <div class="guest-name">不懂</div>
+                            <div class="guest-comment">为什么让我刷到这么无脑的微博</div>
+                            <div class="guest-comment-reply-box">
+                                <div class="guest-comment-reply-area">
+                                    <div class="ps-name">aaaa</div>
+                                    <span>:</span>
+                                    <div class="ps-content"></div>
+                                </div>
+                            </div>
+                            <div class="guest-date-box">
+                                <div class="date">2小时前</div>
+                                <div class="btn">
+                                    <aside class="like-btn">
+                                        <i class="lite-iconf lite-iconf-like" id="like"></i>
+                                        <em class="liked-num">0</em>
+                                    </aside>
+                                    <aside class="comment-btn">
+                                        <!-- <a href="./comment.html"></a> -->
+                                        <i class="lite-iconf lite-iconf-comments"></i>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-wrap">
+                        <div class="guest-img">
+                            <img class="bgImg" src="./source/2.jpg" alt="">
+                        </div>
+                        <div class="guest-box">
+                            <div class="guest-name">YI</div>
+                            <div class="guest-comment">用得着你说吗？在这抖什么机灵呢</div>
+                            <div class="guest-comment-reply-box">
+                                <div class="guest-comment-reply-area">
+                                    <div class="ps-name">aaaa</div>
+                                    <span>:</span>
+                                    <div class="ps-content"></div>
+                                </div>
+                            </div>
+                            <div class="guest-date-box">
+                                <div class="date">1小时前</div>
+                                <div class="btn">
+                                    <aside class="like-btn">
+                                        <i class="lite-iconf lite-iconf-like" id="like"></i>
+                                        <em class="liked-num">0</em>
+                                    </aside>
+                                    <aside class="comment-btn">
+                                        <i class="lite-iconf lite-iconf-comments"></i>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-wrap">
+                        <div class="guest-img">
+                            <img class="bgImg" src="./source/3.jpg" alt="">
+                        </div>
+                        <div class="guest-box">
+                            <div class="guest-name">只爱学习</div>
+                            <div class="guest-comment">垃圾玩意，净说废话</div>
+                            <div class="guest-comment-reply-box">
+                                <div class="guest-comment-reply-area">
+                                    <div class="ps-name">aaaa</div>
+                                    <div>:</div>
+                                    <div class="ps-content"></div>
+                                </div>
+                            </div>
+                            <div class="guest-date-box">
+                                <div class="date">38分钟前</div>
+                                <div class="btn">
+                                    <aside class="like-btn">
+                                        <i class="lite-iconf lite-iconf-like" id="like"></i>
+                                        <em class="liked-num">0</em>
+                                    </aside>
+                                    <aside class="comment-btn">
+                                        <i class="lite-iconf lite-iconf-comments"></i>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="modal">
+                            <div class="modal-header">
+                                <p class="modal-header-title">发送评论</p>
+                                <p class="modal-header-close">x</p>
+                            </div>
+                            <div class="modal-content">
+                                <input class="modal-content-text"></input>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="modal-send-btn">发送</button>
+                            </div>
+                        </div>
+                        <div class="mask"></div> -->
+                    </div>
+                </div>
+                <div class="new-comment">
+                    <div class="new-comment-wrap">
+                        <div class="guest-img">
+                            <img class="bgImg" src="./source/4.jpg" alt="">
+                        </div>
+                        <div class="new-guest-box">
+                            <div class="new-guest-name">微博用户</div>
+                            <div class="new-guest-comment"></div>
+                            <div class="new-guest-date-box">
+                                <div class="date">1分钟前</div>
+                                <div class="btn">
+                                    <aside class="like-btn">
+                                        <i class="lite-iconf lite-iconf-like" id="like"></i>
+                                        <em class="liked-num">0</em>
+                                    </aside>
+                                    <aside class="comment-btn">
+                                        <i class="lite-iconf lite-iconf-comments"></i>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="forward-area">
+            <div class="forward-box">
+                <p class="noforward">还没有人转发</p>
+            </div>
+        </div>
+
+        <div class="like-area">
+            <div class="like-box">
+                <p class="nolike">还没有人赞过</p>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-header">
+                <p class="modal-header-title">发送评论</p>
+                <p class="modal-header-close">x</p>
+            </div>
+            <div class="modal-content">
+                <input class="modal-content-text"></input>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-send-btn" disabled='disabled'>发送</button>
+            </div>
+        </div>
+        <div class="mask"></div>
+
+        <div class="modal-none">
+            <div class="modal-header">
+                <p class="modal-header-title">Enjoy~</p>
+                <p class="modal-header-close">x</p>
+            </div>
+            <div class="modal-content">
+                <div class="modal-content-text">这是一个真实的微博页面。你可以对博主点赞，评论；也可以为评论进行回复，点赞。祝你玩的愉快~</div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-close-btn">关闭</button>
+            </div>
+        </div>
+        <div class="mask"></div>
+
+        <footer class="reply-box">
+            <div class="reply-banner">
+                <textarea class="comment-detail" placeholder="发送评论" wrap="virtual"></textarea>
+                <div class="reply-btn" style="display: flex; justify-content: flex-end;">
+                    <button class="reply">发送</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
