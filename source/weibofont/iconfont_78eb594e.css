@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'iconfont_78eb594e';
+    src: url('fonts/iconfont_78eb594e.eot');
+    src: url('fonts/iconfont_78eb594e.eot') format('embedded-opentype'),
+         url('fonts/iconfont_78eb594e.woff2') format('woff2'),
+         url('fonts/iconfont_78eb594e.woff') format('woff'),
+         url('fonts/iconfont_78eb594e.ttf') format('truetype'),
+         url('fonts/iconfont_78eb594e.svg#iconfont_78eb594e') format('svg');
+}

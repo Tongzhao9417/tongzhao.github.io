@@ -1,0 +1,44 @@
+#welcome{
+    margin-top: 150px;
+}
+
+#intro{
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+#ok{
+    margin-top: 50px;
+    width: 720px;
+    height: 70px;
+    font-size: 40px;
+    border: 2.3px solid;
+    padding-top: 0;
+}
+.modal-content{
+    height: 100%;
+    /* display: inline-block !important; */
+    /* align-content: center; */
+}
+
+.modal-body{
+    height: 100%;
+    display: inline-block;
+    /* vertical-align: bottom; */
+}
+
+#modal-nickname{
+    height: 120px;
+    width: 100%;
+    /* display:inline-table !important;
+    vertical-align: bottom !important; */
+    border:none;
+    border-bottom: 1px solid;
+    font-size: 40px;
+    outline: none;
+}
+
+#modal-nickname:focus{
+outline: none;
+border-bottom: 3px solid #c2601f;
+}

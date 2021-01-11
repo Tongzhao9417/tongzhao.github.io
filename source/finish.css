@@ -1,0 +1,43 @@
+#thanku{
+    margin-top: 130px;
+    font-size: 80px
+}
+
+#thanks{
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+.picture{
+    position: absolute;
+    max-width: 300px;
+    /* right: 3%; */
+    /* top:30%;
+    left:3%; */
+    left: 3%;
+    
+}
+.internet{
+    /* margin-top: -200px; */
+    position: relative;
+    font-size: 70px;
+    color: red;
+    padding-bottom: 60px;
+}
+
+.check-sentence{
+    font-size: 30px;
+    padding-bottom: 25px;
+}
+
+label{
+    font-size: 30px !important;
+    padding-bottom: 30px;
+}
+
+#download{
+    margin-top: 15px;
+    width: 50%;
+    height: 70px;
+    font-size: 30px;
+}
