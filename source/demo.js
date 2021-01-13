@@ -30,22 +30,32 @@ $(function () {
     $('#finishing').click(function () { 
         sessionStorage.setItem('为评论点赞数量',countLikeNum())
         sessionStorage.setItem('为博主点赞数量',countHostLikeNum())
-        
+        var time = new Date();
+        var timestamp = Date.parse(time);
+        var now = moment(timestamp).locale('zh-cn').format('lll')
         JSONObj.为评论点赞数量 = countLikeNum();
         JSONObj.为博主点赞数量 = countHostLikeNum();
         JSONObj.评论内容 = sessionStorage.getItem('评论内容');
+        JSONObj.完成时间 = now;
         var jsonStr = JSON.stringify(JSONObj)
         console.log(jsonStr)
         $.ajax({
             type: "post",
             url: "http://tongzhao.xyz/get.php",
+            // url: "http://localhost/TryV6/get2.php",
+            async:true,
             contentType:'application/json',
             data: jsonStr,
-            dataType: "json"
-            // success: function () {
-            //     window.location.href="./finish.html";
-            // }
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+                if (data =='success') {
+                    $(window).attr('location','./finish.html')
+                    // window.location.href="./finish.html" 
+                }
+            },
         });
+        ;
     });
     function countLikeNum() {
         var p = $('.comment-area .lite-iconf-liked').length;
