@@ -25,7 +25,7 @@ $(function () {
     timer(intDiff);
     setTimeout (function (){
         $('#finishing').show()
-    },0)
+    },61000)
     
     $('#finishing').click(function () { 
         sessionStorage.setItem('为评论点赞数量',countLikeNum())
