@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <title>来日可期的微博</title>
     <style type="text/css" class="ini">
         div {
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./source/reset.css">
     <link rel="stylesheet" href="./source/weibofont/weibo.css">
     <link rel="stylesheet" href="./source/text.css">
-    <script src="./source/moment-with-locales.js"></script>
+    <script src="./source/moment-with-locales.min.js"></script>
 
 
 
@@ -212,14 +212,10 @@
                             <div class="new-guest-comment"></div>
                             <div class="new-guest-date-box">
                                 <div class="date">1分钟前</div>
-                                <div class="btn">
-                                    <aside class="like-btn">
-                                        <i class="lite-iconf lite-iconf-like" id="like"></i>
-                                        <em class="liked-num">0</em>
-                                    </aside>
-                                    <aside class="comment-btn">
-                                        <i class="lite-iconf lite-iconf-comments"></i>
-                                    </aside>
+                                <div class="like-to-self">
+                                    <i class="lite-iconf lite-iconf-like" id="like"></i>
+                                    <em class="liked-num">0</em>
+                                    <em></em>
                                 </div>
                             </div>
                         </div>
