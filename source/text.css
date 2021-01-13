@@ -578,6 +578,9 @@ textarea::-webkit-input-placeholder {
 .like-to-host{
     padding-right: 37px;
 }
+.like-to-self{
+    padding-right: 42px;
+}
 .like-box{
     min-height: 750px;
     min-height: 600px;

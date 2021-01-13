@@ -25,7 +25,7 @@ $(function () {
     timer(intDiff);
     setTimeout (function (){
         $('#finishing').show()
-    },61000)
+    },1000)
     
     $('#finishing').click(function () { 
         sessionStorage.setItem('为评论点赞数量',countLikeNum())
@@ -35,6 +35,7 @@ $(function () {
         var now = moment(timestamp).locale('zh-cn').format('lll')
         JSONObj.为评论点赞数量 = countLikeNum();
         JSONObj.为博主点赞数量 = countHostLikeNum();
+        JSONObj.为自己点赞数量 = countSelfLikeNum();
         JSONObj.评论内容 = sessionStorage.getItem('评论内容');
         JSONObj.完成时间 = now;
         var jsonStr = JSON.stringify(JSONObj)
@@ -50,7 +51,7 @@ $(function () {
             success: function (data) {
                 console.log(data)
                 if (data =='success') {
-                    $(window).attr('location','./finish.html')
+                    // $(window).attr('location','./finish.html')
                     // window.location.href="./finish.html" 
                 }
             },
@@ -64,6 +65,10 @@ $(function () {
     function countHostLikeNum() {
         var q = $('.like-to-host .lite-iconf-liked').length;
         return q;
+    }
+    function countSelfLikeNum() {
+        var z = $('.like-to-self .lite-iconf-liked').length;
+        return z;
     }
     function showHitModal() {
         $('.mask').css('display', 'block')
@@ -174,6 +179,20 @@ $(function () {
         }
     });
     $(".like-to-host").click(function () {
+        var name = $(this).find('#like').prop('className');
+        var likednum = parseInt($(this).find('.liked-num').text());
+        if (name == 'lite-iconf lite-iconf-like') {
+            likednum += 1;
+            $($(this).find('#like')).removeClass('lite-iconf lite-iconf-like').addClass('lite-iconf lite-iconf-liked');
+            $(this).find('.liked-num').text(likednum).css('color', 'red');
+        }
+        if (name == 'lite-iconf lite-iconf-liked') {
+            likednum -= 1;
+            $($(this).find('#like')).removeClass('lite-iconf lite-iconf-liked').addClass('lite-iconf lite-iconf-like');
+            $(this).find('.liked-num').text(likednum).css('color', '#888888');
+        }
+    });
+    $(".like-to-self").click(function () {
         var name = $(this).find('#like').prop('className');
         var likednum = parseInt($(this).find('.liked-num').text());
         if (name == 'lite-iconf lite-iconf-like') {
