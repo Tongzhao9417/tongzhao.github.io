@@ -4,7 +4,8 @@ $(function () {
     $('.forward-area').hide();
 
     var i = sessionStorage.getItem('name');
-
+    var JSONObj = {};
+    JSONObj.昵称 = i;
     var intDiff = parseInt(60); //倒计时总秒数量
     function timer(intDiff) {
         window.setInterval(function () {
@@ -24,12 +25,27 @@ $(function () {
     timer(intDiff);
     setTimeout (function (){
         $('#finishing').show()
-    },61000)
+    },0)
     
     $('#finishing').click(function () { 
         sessionStorage.setItem('为评论点赞数量',countLikeNum())
         sessionStorage.setItem('为博主点赞数量',countHostLikeNum())
-        window.location.href="./finish.html";
+        
+        JSONObj.为评论点赞数量 = countLikeNum();
+        JSONObj.为博主点赞数量 = countHostLikeNum();
+        JSONObj.评论内容 = sessionStorage.getItem('评论内容');
+        var jsonStr = JSON.stringify(JSONObj)
+        console.log(jsonStr)
+        $.ajax({
+            type: "post",
+            url: "http://tongzhao.xyz/get.php",
+            contentType:'application/json',
+            data: jsonStr,
+            dataType: "json"
+            // success: function () {
+            //     window.location.href="./finish.html";
+            // }
+        });
     });
     function countLikeNum() {
         var p = $('.comment-area .lite-iconf-liked').length;
@@ -176,7 +192,7 @@ $(function () {
 
     $('.comment-btn').click(function () {
         var name = sessionStorage.getItem('name')
-        var guestName = '';
+        // var guestName = '';
         var guestName = $(this).parent().parent().parent().find('.guest-name').text();
         showModal()
         showComment()
@@ -229,8 +245,9 @@ $(function () {
             $('[class=guest-comment-reply-boxing]').children().children('div.ps-name').text(name)
             $('[class=guest-comment-reply-boxing]').attr('class', 'guest-comment-reply-boxed')
             // event.stopPropagation();
-            console.log(guestName)
+            // console.log(guestName)
             sessionStorage.setItem(guestName,a)
+            JSONObj[guestName] = a;
 
             closeModal()
         })
