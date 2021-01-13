@@ -25,7 +25,7 @@ $(function () {
     timer(intDiff);
     setTimeout (function (){
         $('#finishing').show()
-    },61000)
+    },1000)
     
     $('#finishing').click(function () { 
         sessionStorage.setItem('为评论点赞数量',countLikeNum())
@@ -41,7 +41,7 @@ $(function () {
         console.log(jsonStr)
         $.ajax({
             type: "post",
-            url: "http://tongzhao.xyz/get.php",
+            url: "//tongzhao.xyz/get.php",
             // url: "http://localhost/TryV6/get2.php",
             async:true,
             contentType:'application/json',
