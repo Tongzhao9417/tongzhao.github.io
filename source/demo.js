@@ -20,7 +20,7 @@ $(function () {
             $('#minute_show').html('<s></s>' + minute + '分');
             $('#second_show').html('<s></s>' + second + '秒');
             intDiff--;
-        }, 61000);
+        }, 1000);
     }
     timer(intDiff);
     setTimeout (function (){
@@ -51,7 +51,7 @@ $(function () {
             success: function (data) {
                 console.log(data)
                 if (data =='success') {
-                    // $(window).attr('location','./finish.html')
+                    $(window).attr('location','./finish.html')
                     // window.location.href="./finish.html" 
                 }
             },
