@@ -1,0 +1,5 @@
+
+@import url("https://cdn.jsdelivr.net/npm/vxe-table/lib/style.css");
+.vxe-textarea--inner {
+    line-height: inherit;
+}
