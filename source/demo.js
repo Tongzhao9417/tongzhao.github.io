@@ -42,7 +42,7 @@ $(function () {
         console.log(jsonStr)
         $.ajax({
             type: "post",
-            url: "https://tongzhao.xyz/get.php",
+            url: "https://119.29.91.253/get.php",
             // url: "http://localhost/TryV6/get2.php",
             async:true,
             contentType:'application/json',
