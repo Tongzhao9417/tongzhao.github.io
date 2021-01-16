@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xe-utils"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vxe-table"></script>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="./source/result.js"></script> -->
+    <!-- 使用 cdn 引用方式需要注意是否锁定版本，默认指向最新版本 -->
+    <link rel="stylesheet" href="./source/main.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <template>
+            <div>
+                <vxe-table border show-header-overflow show-overflow highlight-hover-row :align="allAlign"
+                    :data="tableData">
+                    <vxe-table-column type="seq" title="序号" width='50'></vxe-table-column>
+                    <vxe-table-column field="name" title="昵称" width='120'></vxe-table-column>
+                    <vxe-table-column field="likeNum" title="为评论点赞数量" width='120'></vxe-table-column>
+                    <vxe-table-column field="likeHostNum" title="为博主点赞数量" width='120'></vxe-table-column>
+                    <vxe-table-column field="likeSelfNum" title="为自己点赞数量" width='120'></vxe-table-column>
+                    <vxe-table-column field="commentContent" title="评论内容"></vxe-table-column>
+                    <vxe-table-column field="comment1" title="不懂"></vxe-table-column>
+                    <vxe-table-column field="comment2" title="YI"></vxe-table-column>
+                    <vxe-table-column field="comment3" title="只爱学习"></vxe-table-column>
+                    <vxe-table-column field="finishTime" title="完成时间"></vxe-table-column>
+                </vxe-table>
+            </div>
+        </template>
+    </div>
+    <script src="./source/main.js"></script>
+
+</body>
+
+</html>
