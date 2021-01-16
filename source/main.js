@@ -18,7 +18,7 @@ var Main = {
       var c = ['name', 'likeNum', 'likeHostNum', 'likeSelfNum', 'commentContent', 'comment1','comment2','comment3','finishTime'];
       
       var self = this
-      axios.post('https://tongzhao.xyz/get.php/show.php')
+      axios.post('https://119.29.91.253/show.php')
         .then(function (response) {
           if (response.status == 200) {
             a = response.data;
